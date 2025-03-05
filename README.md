@@ -87,7 +87,7 @@ This project is licensed under the **MIT License**.
 ---
 
 ### 🔗 Connect with Me
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://linkedin.com/in/shreyashap)  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://linkedin.com/in/shreyash-p-)  
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-black)](https://github.com/shreyashap)  
 
 ---
