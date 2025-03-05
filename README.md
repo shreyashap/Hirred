@@ -12,6 +12,7 @@ A modern and efficient **MERN stack** hiring platform that connects **recruiters
 ✅ **Profile Management** (Update Experience, Skills)  
 ✅ **Email Notifications** (Application Updates, Rejections)  
 ✅ **Saved Jobs & Application Tracking**  
+✅ **A weekly job recommndation**  
 
 ## 🛠️ Tech Stack
 
