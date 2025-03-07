@@ -91,7 +91,6 @@ const ProfileButton = () => {
         >
           Update Profile
         </DropdownMenuItem>
-
         {userData.accountType === "applicant" && (
           <>
             <DropdownMenuItem onClick={() => navigate("/my-applications")}>
@@ -103,9 +102,14 @@ const ProfileButton = () => {
           </>
         )}
         {userData.accountType === "recruiter" && (
-          <DropdownMenuItem onClick={() => navigate("/companies")}>
-            Companies
-          </DropdownMenuItem>
+          <>
+            <DropdownMenuItem onClick={() => navigate("/companies")}>
+              Companies
+            </DropdownMenuItem>
+            <DropdownMenuItem onClick={() => navigate("/add-company")}>
+              Add Company
+            </DropdownMenuItem>
+          </>
         )}
 
         <DropdownMenuItem onClick={handleLogout} className="text-red-500">

@@ -139,16 +139,23 @@ const UpdateProfile = () => {
             <p className="text-gray-300">
               <strong>Country:</strong> {user?.country}
             </p>
-            <p className="text-gray-300">
-              <strong>Bio:</strong> {user?.bio}
-            </p>
 
-            <div className="h-10 flex flex-wrap gap-2 mt-2">
-              Skills:{" "}
-              {userSkills ||
-                (userSkills?.length > 0 &&
-                  userSkills.map((skill, index) => <p key={index}>{skill}</p>))}
-            </div>
+            {user && user.accountType === "applicant" && (
+              <>
+                <p className="text-gray-300">
+                  <strong>Bio:</strong> {user?.bio}
+                </p>
+
+                <div className="h-10 flex flex-wrap gap-2 mt-2">
+                  Skills:{" "}
+                  {userSkills ||
+                    (userSkills?.length > 0 &&
+                      userSkills.map((skill, index) => (
+                        <p key={index}>{skill}</p>
+                      )))}
+                </div>
+              </>
+            )}
           </CardContent>
         </Card>
 
@@ -200,14 +207,17 @@ const UpdateProfile = () => {
             </div>
 
             {/* Skills */}
-            <div>
-              <Label>Skills</Label>
-              <Input
-                placeholder="React, Python, MongoDB"
-                {...register("skills")}
-                className="w-full p-3 rounded-md bg-gray-800 border border-gray-600 text-gray-100 focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
+
+            {user && user.accountType === "applicant" && (
+              <div>
+                <Label>Skills</Label>
+                <Input
+                  placeholder="React, Python, MongoDB"
+                  {...register("skills")}
+                  className="w-full p-3 rounded-md bg-gray-800 border border-gray-600 text-gray-100 focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+            )}
 
             {/* Bio */}
             <div>
@@ -220,22 +230,25 @@ const UpdateProfile = () => {
               />
             </div>
             {/* Preferences */}
-            <div>
-              <Label>Job Preferences</Label>
-              <Input
-                type="text"
-                placeholder="Press enter to add your preference"
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" && e.target.value.trim() !== "") {
-                    append({ value: e.target.value.trim() });
-                    e.target.value = "";
-                    e.preventDefault();
-                  }
-                }}
-                className="w-full p-3 rounded-md bg-gray-800 border border-gray-600 text-gray-100 focus:ring-2 focus:ring-blue-500"
-                disabled={watchPreferences.length > 4}
-              />
-            </div>
+
+            {user && user.accountType === "applicant" && (
+              <div>
+                <Label>Job Preferences</Label>
+                <Input
+                  type="text"
+                  placeholder="Press enter to add your preference"
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" && e.target.value.trim() !== "") {
+                      append({ value: e.target.value.trim() });
+                      e.target.value = "";
+                      e.preventDefault();
+                    }
+                  }}
+                  className="w-full p-3 rounded-md bg-gray-800 border border-gray-600 text-gray-100 focus:ring-2 focus:ring-blue-500"
+                  disabled={watchPreferences.length > 4}
+                />
+              </div>
+            )}
 
             {/* Preferences List */}
             <div className="mt-2 flex gap-6 items-center">

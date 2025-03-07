@@ -1,5 +1,5 @@
 import axios from "axios";
-import { AwardIcon } from "lucide-react";
+
 
 export const applyToJob = async (data, jobId, setLoading) => {
   try {

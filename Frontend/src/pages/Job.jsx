@@ -9,16 +9,10 @@ import {
   SelectValue,
 } from "../components/ui/select";
 import { Input } from "../components/ui/input";
-import { useParams, useSearchParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getSingleJob, getJobApplications } from "../api/postJobApi";
 import { updateJobActiveStatus } from "../api/applyJob";
-import {
-  MapPin,
-  Briefcase,
-  DoorOpen,
-  DoorClosed,
-  AwardIcon,
-} from "lucide-react";
+import { MapPin, Briefcase, DoorOpen, DoorClosed } from "lucide-react";
 import ApplyJobDrawer from "@/components/JobApplication/Application";
 import toast, { Toaster } from "react-hot-toast";
 import ApplicationCard from "@/components/Company/ApplicationCard";

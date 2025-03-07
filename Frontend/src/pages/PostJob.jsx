@@ -1,8 +1,6 @@
 import { Button } from "../components/ui/button";
-import { IoAddCircleOutline } from "react-icons/io5";
 import { Controller, useForm } from "react-hook-form";
 import { Input } from "../components/ui/input";
-import { Textarea } from "../components/ui/textarea";
 import { Label } from "@radix-ui/react-dropdown-menu";
 import MDEditor, { selectLine } from "@uiw/react-md-editor";
 import { useEffect, useState } from "react";
@@ -16,7 +14,6 @@ import {
   SelectLabel,
 } from "../components/ui/select";
 import { postJob } from "../api/postJobApi";
-import { useSelector } from "react-redux";
 import { getCompanyNames } from "../api/companyApi";
 import { postJobSchema } from "../schemas/companySchema";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -28,22 +25,6 @@ import {
   StateSelect,
 } from "react-country-state-city";
 import "react-country-state-city/dist/react-country-state-city.css";
-
-const jobLocations = [
-  {
-    label: "United States",
-    options: ["New York, NY", "San Francisco, CA", "Los Angeles, CA"],
-  },
-  {
-    label: "India",
-    options: [
-      "Bangalore, Karnataka",
-      "Hyderabad, Telangana",
-      "Mumbai, Maharashtra",
-      "Pune, Maharashtra",
-    ],
-  },
-];
 
 const PostJob = () => {
   const {
