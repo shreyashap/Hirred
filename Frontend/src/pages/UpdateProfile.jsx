@@ -9,7 +9,7 @@ import {
 import { getUser } from "../api/user";
 import { ScaleLoader } from "react-spinners";
 import { useForm, Controller, useFieldArray } from "react-hook-form";
-import { Input } from "@/components/ui/Input";
+import { Input } from "@/components/ui/input";
 import { Label } from "@radix-ui/react-dropdown-menu";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
