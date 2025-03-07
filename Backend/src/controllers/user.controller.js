@@ -22,6 +22,7 @@ import { client } from "../client.js";
 const options = {
   httpOnly: true,
   secure: process.env.NODE_ENV === "production",
+  sameSite: "none",
 };
 
 const registerUser = asyncHandler(async (req, res) => {
