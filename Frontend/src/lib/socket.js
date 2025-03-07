@@ -1,6 +1,7 @@
+import { baseUrl } from "@/api/applyJob";
 import { io } from "socket.io-client";
 
-const socket = new io("http://localhost:3000", {
+const socket = new io(`${baseUrl}`, {
   withCredentials: true,
 });
 
