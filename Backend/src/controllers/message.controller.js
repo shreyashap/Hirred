@@ -5,7 +5,6 @@ import { getReceiverSocketId } from "../socket.js";
 import { Conversation } from "../models/conversation.model.js";
 import { Job } from "../models/job.model.js";
 import { client } from "../client.js";
-import { chat } from "googleapis/build/src/apis/chat/index.js";
 
 export const startConversation = asyncHandler(async (req, res) => {
   const { senderId, receiverId, jobId } = req.query;
@@ -84,7 +83,6 @@ export const sendMessage = asyncHandler(async (req, res) => {
     io.to(receiverSocketId).emit("sendMessage", message);
   }
   res.status(200).json({
-    message: "success",
     message,
   });
 });
@@ -116,7 +114,6 @@ export const getMessages = asyncHandler(async (req, res) => {
 
   await client.setEx(cacheKey, 900, JSON.stringify(messages));
   res.status(200).json({
-    message: "success",
     messages,
   });
 });

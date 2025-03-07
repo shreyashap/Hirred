@@ -48,7 +48,7 @@ const generateHTML = (userRecommendations) => {
           <div class="job-title">${job.title}</div>
           <div class="company-name">${job.companyName}</div>
           <div class="location">${job.location}</div>
-          <a href="http://localhost:5173/job/${job._id}" target="_blank">More Details</a>
+          <a href="https://hirred-rosy.vercel.app/job/${job._id}" target="_blank">More Details</a>
         </div>`;
     });
 

@@ -57,7 +57,7 @@ const html = `<!DOCTYPE html>
     <p>Hello,</p>
     <p>We noticed that your profile is missing some important information like skills and preferences.</p>
     <p>To receive better job recommendations, please take a moment to update your profile.</p>
-    <p><a href="http://localhost:5173/update-profile" class="button">Update Profile</a></p>
+    <p><a href="https://hirred-rosy.vercel.app/update-profile" class="button">Update Profile</a></p>
     <p class="footer">If you have any questions, feel free to reach out to our support team.</p>
   </div>
 </body>
