@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon src/index.js",
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "postinstall": "patch-package"
   },
   "keywords": [],
   "author": "",
@@ -38,6 +39,7 @@
   "devDependencies": {
     "@babel/core": "^7.26.9",
     "@babel/preset-env": "^7.26.9",
-    "babel-cli": "^6.26.0"
+    "babel-cli": "^6.26.0",
+    "patch-package": "^8.0.0"
   }
 }
