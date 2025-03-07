@@ -1,10 +1,11 @@
 import axios from "axios";
+import { baseUrl } from "./applyJob";
 
 export const registerCompany = async (data, setLoading) => {
   try {
     setLoading(true);
     const response = await axios.post(
-      "http://localhost:3000/api/v1/company/register-company",
+      `${baseUrl}/api/v1/company/register-company`,
       data,
       {
         withCredentials: true,
@@ -23,7 +24,7 @@ export const updateCompanyDetails = async (id, data, setLoading) => {
   try {
     setLoading(true);
     const response = await axios.post(
-      `http://localhost:3000/api/v1/company/update-company-details/${id}`,
+      `${baseUrl}/api/v1/company/update-company-details/${id}`,
       data,
       {
         withCredentials: true,
@@ -42,7 +43,7 @@ export const getAllCompanies = async (setLoading) => {
   try {
     setLoading(true);
     const response = await axios.get(
-      "http://localhost:3000/api/v1/company/get-companies",
+      `${baseUrl}/api/v1/company/get-companies`,
       {
         withCredentials: true,
       }
@@ -60,7 +61,7 @@ export const getCompanyNames = async (setLoading) => {
   try {
     setLoading(true);
     const response = await axios.get(
-      "http://localhost:3000/api/v1/company/get-companyNames",
+      `${baseUrl}/api/v1/company/get-companyNames`,
       {
         withCredentials: true,
       }
@@ -77,7 +78,7 @@ export const getAllCompanyNames = async (setLoading) => {
   try {
     setLoading(true);
     const response = await axios.get(
-      "http://localhost:3000/api/v1/company/get-all-companies",
+      `${baseUrl}/api/v1/company/get-all-companies`,
       {
         withCredentials: true,
       }
@@ -95,7 +96,7 @@ export const deleteCompany = async (companyId, setLoading) => {
   try {
     setLoading(true);
     const response = await axios.post(
-      `http://localhost:3000/api/v1/company/delete-company/${companyId}`,
+      `${baseUrl}/api/v1/company/delete-company/${companyId}`,
       {},
       {
         withCredentials: true,

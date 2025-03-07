@@ -1,11 +1,12 @@
 import axios from "axios";
 
+export const baseUrl = import.meta.env.VITE_API_URL;
 
 export const applyToJob = async (data, jobId, setLoading) => {
   try {
     setLoading(true);
     const response = await axios.post(
-      `http://localhost:3000/api/v1/job/apply-job/${jobId}`,
+      `${baseUrl}/api/v1/job/apply-job/${jobId}`,
       data,
       {
         withCredentials: true,
@@ -24,7 +25,7 @@ export const updateJobActiveStatus = async (data, jobId, setLoading) => {
   try {
     setLoading(true);
     const response = await axios.post(
-      `http://localhost:3000/api/v1/job/update-active-status/${jobId}`,
+      `${baseUrl}/api/v1/job/update-active-status/${jobId}`,
       data,
       {
         withCredentials: true,
@@ -47,7 +48,7 @@ export const updateJobStatus = async (
   try {
     setLoading(true);
     const response = await axios.post(
-      `http://localhost:3000/api/v1/job/update-job-status?jobId=${jobId}&applicationId=${applicationId}`,
+      `${baseUrl}/api/v1/job/update-job-status?jobId=${jobId}&applicationId=${applicationId}`,
       data,
       {
         withCredentials: true,
@@ -66,7 +67,7 @@ export const searchJob = async (search, score, setLoading, id) => {
   try {
     setLoading(true);
     const response = await axios.post(
-      `http://localhost:3000/api/v1/job/search-applications?search=${search}&id=${id}`,
+      `${baseUrl}/api/v1/job/search-applications?search=${search}&id=${id}`,
       { score },
       {
         withCredentials: true,

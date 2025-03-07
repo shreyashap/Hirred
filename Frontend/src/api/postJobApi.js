@@ -1,15 +1,12 @@
 import axios from "axios";
+import { baseUrl } from "./applyJob";
 
 export const postJob = async (data, setLoading) => {
   try {
     setLoading(true);
-    const response = await axios.post(
-      "http://localhost:3000/api/v1/job/post-job",
-      data,
-      {
-        withCredentials: true,
-      }
-    );
+    const response = await axios.post(`${baseUrl}/api/v1/job/post-job`, data, {
+      withCredentials: true,
+    });
     return { data: response.data, error: null };
   } catch (error) {
     const errMsg = error?.response || "An error occured";
@@ -23,7 +20,7 @@ export const getAllJobs = async (pageNo, setLoading) => {
   try {
     setLoading(true);
     const response = await axios.get(
-      `http://localhost:3000/api/v1/job/jobs?page=${pageNo}`,
+      `${baseUrl}/api/v1/job/jobs?page=${pageNo}`,
       {
         withCredentials: true,
       }
@@ -40,12 +37,9 @@ export const getAllJobs = async (pageNo, setLoading) => {
 export const getSingleJob = async (jobId, setLoading) => {
   try {
     setLoading(true);
-    const response = await axios.get(
-      `http://localhost:3000/api/v1/job/get-job/${jobId}`,
-      {
-        withCredentials: true,
-      }
-    );
+    const response = await axios.get(`${baseUrl}/api/v1/job/get-job/${jobId}`, {
+      withCredentials: true,
+    });
     return { data: response.data, error: null };
   } catch (error) {
     const errMsg = error?.response || "An error occured";
@@ -59,7 +53,7 @@ export const getJobByCompany = async (companyId, setLoading) => {
   try {
     setLoading(true);
     const response = await axios.get(
-      `http://localhost:3000/api/v1/job/get-job-company/${companyId}`,
+      `${baseUrl}/api/v1/job/get-job-company/${companyId}`,
       {
         withCredentials: true,
       }
@@ -77,7 +71,7 @@ export const getJobApplications = async (jobId, setLoading) => {
   try {
     setLoading(true);
     const response = await axios.get(
-      `http://localhost:3000/api/v1/job/get-applicants/${jobId}`,
+      `${baseUrl}/api/v1/job/get-applicants/${jobId}`,
       {
         withCredentials: true,
       }
@@ -94,12 +88,9 @@ export const getJobApplications = async (jobId, setLoading) => {
 export const getMyApplications = async (setLoading) => {
   try {
     setLoading(true);
-    const response = await axios.get(
-      `http://localhost:3000/api/v1/job/my-applications`,
-      {
-        withCredentials: true,
-      }
-    );
+    const response = await axios.get(`${baseUrl}/api/v1/job/my-applications`, {
+      withCredentials: true,
+    });
     return { data: response.data, error: null };
   } catch (error) {
     const errMsg = error?.response || "An error occured";
@@ -113,7 +104,7 @@ export const deleteJob = async (jobId, setLoading) => {
   try {
     setLoading(true);
     const response = await axios.post(
-      `http://localhost:3000/api/v1/job/delete-job/${jobId}`,
+      `${baseUrl}/api/v1/job/delete-job/${jobId}`,
       {},
       {
         withCredentials: true,

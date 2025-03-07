@@ -1,7 +1,8 @@
 import axios from "axios";
+import { baseUrl } from "./applyJob";
 
 const api = axios.create({
-  baseURL: "http://localhost:3000/api/v1/user",
+  baseURL: `${baseUrl}/api/v1/user`,
 });
 
 export const registerUser = async (accountType, data, setLoading) => {
@@ -9,7 +10,7 @@ export const registerUser = async (accountType, data, setLoading) => {
     if (setLoading) setLoading(true);
 
     const response = await axios.post(
-      `http://localhost:3000/api/v1/user/register?accountType=${accountType}`,
+      `${baseUrl}/api/v1/user/register?accountType=${accountType}`,
       data
     );
 
@@ -26,13 +27,9 @@ export const login = async (data, setLoading) => {
   try {
     if (setLoading) setLoading(true);
 
-    const response = await axios.post(
-      "http://localhost:3000/api/v1/user/login",
-      data,
-      {
-        withCredentials: true,
-      }
-    );
+    const response = await axios.post(`${baseUrl}/api/v1/user/login`, data, {
+      withCredentials: true,
+    });
 
     return { data: response.data, error: null };
   } catch (error) {
@@ -46,7 +43,7 @@ export const login = async (data, setLoading) => {
 export const logout = async () => {
   try {
     const response = await axios.post(
-      "http://localhost:3000/api/v1/user/logout",
+      `${baseUrl}/api/v1/user/logout`,
       {},
       {
         withCredentials: true,
@@ -67,12 +64,9 @@ export const googleAuth = (code, accountType) =>
 
 export const getUser = async () => {
   try {
-    const response = await axios.get(
-      "http://localhost:3000/api/v1/user/get-user",
-      {
-        withCredentials: true,
-      }
-    );
+    const response = await axios.get(`${baseUrl}/api/v1/user/get-user`, {
+      withCredentials: true,
+    });
     return { data: response.data, error: null };
   } catch (error) {
     const errMsg = error?.response.data.error || "An error occured";
@@ -85,7 +79,7 @@ export const forgetPassword = async (data, setLoading) => {
     setLoading(true);
 
     const response = await axios.post(
-      "http://localhost:3000/api/v1/user/request-reset-password",
+      `${baseUrl}/api/v1/user/request-reset-password`,
       data,
       {
         withCredentials: true,
@@ -105,7 +99,7 @@ export const updatePassword = async (data, token, setLoading) => {
   try {
     setLoading(true);
     const response = await axios.patch(
-      `http://localhost:3000/api/v1/user/reset-password/${token}`,
+      `${baseUrl}/api/v1/user/reset-password/${token}`,
       data
     );
 
@@ -122,7 +116,7 @@ export const updateUserDetails = async (data, setLoading) => {
   try {
     setLoading(true);
     const response = await axios.patch(
-      `http://localhost:3000/api/v1/user/update-user-details`,
+      `${baseUrl}/api/v1/user/update-user-details`,
       data,
       {
         withCredentials: true,

@@ -1,10 +1,11 @@
 import axios from "axios";
+import { baseUrl } from "./applyJob";
 
 export const searchJobs = async (searchQuery, setLoading) => {
   try {
     setLoading(true);
     const response = await axios.get(
-      `http://localhost:3000/api/v1/job/search-jobs?search=${searchQuery}`,
+      `${baseUrl}/api/v1/job/search-jobs?search=${searchQuery}`,
       {
         withCredentials: true,
       }
@@ -28,7 +29,7 @@ export const filterJobs = async (
   try {
     setLoading(true);
     const response = await axios.get(
-      `http://localhost:3000/api/v1/job/filter-jobs?location=${location}&company=${company}&employment=${employment}&job=${job}`,
+      `${baseUrl}/api/v1/job/filter-jobs?location=${location}&company=${company}&employment=${employment}&job=${job}`,
       {
         withCredentials: true,
       }
@@ -45,7 +46,7 @@ export const filterJobs = async (
 export const saveUnsaveJobs = async (jobId) => {
   try {
     const response = await axios.get(
-      `http://localhost:3000/api/v1/job/save-unsave-job/${jobId}`,
+      `${baseUrl}/api/v1/job/save-unsave-job/${jobId}`,
       {
         withCredentials: true,
       }
@@ -60,12 +61,9 @@ export const saveUnsaveJobs = async (jobId) => {
 export const getSavedJobs = async (setLoading) => {
   try {
     setLoading(true);
-    const response = await axios.get(
-      `http://localhost:3000/api/v1/job/saved-jobs`,
-      {
-        withCredentials: true,
-      }
-    );
+    const response = await axios.get(`${baseUrl}/api/v1/job/saved-jobs`, {
+      withCredentials: true,
+    });
     return { data: response.data, error: null };
   } catch (error) {
     const errMsg = error?.response || "An error occured";

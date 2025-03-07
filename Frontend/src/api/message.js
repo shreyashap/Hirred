@@ -1,4 +1,5 @@
 import axios from "axios";
+import { baseUrl } from "./applyJob";
 
 export const startConversation = async (
   senderId,
@@ -9,7 +10,7 @@ export const startConversation = async (
   try {
     setLoading(true);
     const response = await axios.post(
-      `http://localhost:3000/api/v1/chat/start-conversation?senderId=${senderId}&receiverId=${receiverId}&jobId=${jobId}`,
+      `${baseUrl}/api/v1/chat/start-conversation?senderId=${senderId}&receiverId=${receiverId}&jobId=${jobId}`,
       {},
       {
         withCredentials: true,
@@ -28,7 +29,7 @@ export const getConversations = async (userId, setLoading) => {
   try {
     setLoading(true);
     const response = await axios.get(
-      `http://localhost:3000/api/v1/chat/get-conversations?userId=${userId}`,
+      `${baseUrl}/api/v1/chat/get-conversations?userId=${userId}`,
       {
         withCredentials: true,
       }
@@ -46,7 +47,7 @@ export const getMessages = async (conversationId, setLoading) => {
   try {
     setLoading(true);
     const response = await axios.get(
-      `http://localhost:3000/api/v1/chat/get-messages/${conversationId}`,
+      `${baseUrl}/api/v1/chat/get-messages/${conversationId}`,
       {
         withCredentials: true,
       }
@@ -63,7 +64,7 @@ export const getMessages = async (conversationId, setLoading) => {
 export const sendMessage = async (receiverId, conversationId, data) => {
   try {
     const response = await axios.post(
-      `http://localhost:3000/api/v1/chat/send-message?receiverId=${receiverId}&conversationId=${conversationId}`,
+      `${baseUrl}/api/v1/chat/send-message?receiverId=${receiverId}&conversationId=${conversationId}`,
       data,
       {
         withCredentials: true,
