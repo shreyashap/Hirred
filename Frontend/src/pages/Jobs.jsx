@@ -255,7 +255,7 @@ const Jobs = () => {
           <BarLoader width={"100%"} color="#36d7b7" className="my-4" />
         )}
 
-        <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-4 px-10">
+        <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 sm:px-2 md:px-5 lg:px-10">
           {jobs.length ? (
             jobs.map((job) => <JobCard key={job._id} job={job} />)
           ) : (

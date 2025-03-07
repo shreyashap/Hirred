@@ -162,10 +162,12 @@ const SingleJobPage = () => {
 
   return (
     <>
-      <div className="max-w-5xl mx-auto p-6 bg-gray-900 text-white rounded-lg shadow-lg my-10">
+      <div className="max-w-5xl mx-4 md:mx-auto p-2 md:p-4 lg:p-6 bg-gray-900 text-white rounded-lg shadow-lg my-10">
         {/* Header Section */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <h1 className="text-4xl font-extrabold text-blue-400">{job.title}</h1>
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-blue-400">
+            {job.title}
+          </h1>
           <img
             src={job.companyLogo || "https://via.placeholder.com/100"}
             alt={`${job.companyName} logo`}
