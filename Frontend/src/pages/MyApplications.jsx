@@ -59,7 +59,7 @@ const MyApplications = () => {
           className="mx-auto text-center mt-28"
         />
       )}
-      <div className="max-w-6xl mx-auto flex flex-col gap-2">
+      <div className="max-w-6xl mx-6 lg:mx-auto flex flex-col gap-2">
         {applications.map((application) => (
           <Card key={application._id}>
             <CardHeader>
