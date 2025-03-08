@@ -23,6 +23,7 @@ import MyApplications from "./pages/MyApplications";
 import Conversation from "./pages/Messaging/Conversation";
 import ForgetPassword from "./pages/ForgetPassword";
 import UpdatePassword from "./pages/UpdatePassword";
+import { Analytics } from "@vercel/analytics/react";
 
 const router = createBrowserRouter([
   {
@@ -161,6 +162,7 @@ function App() {
     <>
       <GoogleOAuthProvider clientId={import.meta.env.VITE_CLIENT_ID}>
         <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+          <Analytics />
           <RouterProvider router={router} />
         </ThemeProvider>
       </GoogleOAuthProvider>
