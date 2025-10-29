@@ -81,9 +81,6 @@ Contributions are welcome! Please follow these steps:
 ## ⭐ Support 
 If you like this project, don't forget to **give it a star ⭐ on GitHub**! Your small support  helps to create new projects like these. 🚀
 
-## 📜 License
-This project is licensed under the **MIT License**.
-
 ---
 
 ### 🔗 Connect with Me
